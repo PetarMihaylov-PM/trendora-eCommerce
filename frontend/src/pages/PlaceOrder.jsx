@@ -6,7 +6,6 @@ import { ShopContext } from '../context/ShopContext';
 import { useContext } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { currency } from '../../../admin/src/App';
 
 function PlaceOrder() {
 
