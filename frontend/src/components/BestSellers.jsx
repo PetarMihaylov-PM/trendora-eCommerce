@@ -22,11 +22,21 @@ function BestSellers() {
           Shop our most-loved products - customer favorites that combine quality, style, and value.
         </p>
       </div>
-      <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
-        {bestSeller.map((item, index) => (
-          <ProductItem key={index} id={item._id} name={item.name} price={item.price} image={item.image}/>
-        ))}
-      </div>
+
+      {/* Rendering the products or loading */}
+      {
+        bestSeller.length > 0 
+          ? 
+            <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
+              {bestSeller.map((item, index) => (
+                <ProductItem key={index} id={item._id} name={item.name} price={item.price} image={item.image}/>
+              ))}
+            </div> 
+          :
+            <div className="w-full h-full flex items-center justify-center bg-white/70 rounded-full">
+              <div className="animate-spin rounded-full h-10 w-10 border-4 border-orange-500 border-t-transparent"></div>
+            </div>
+      }
 
     </div>
   )
